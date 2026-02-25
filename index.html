@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>GenQR</title>
+</head>
+<body>
+    <div class="container">
+        <div class="formulario">
+            <h2>Añade contenido al codigo QR</h2>
+            <div class="campo">
+                <label for="nombre">Nombre del codigo QR</label>
+                <input type="text" id="nombre" placeholder="Ejemplo: El restaurante">
+            </div>
+
+            <div class="campo">
+                <label for="texto">Texto simple</label>
+                <input type="text" id="texto" placeholder="Ejemplo: El restaurante">
+            </div>
+
+            <div class="campo">
+                <label>Color del texto del QR</label>
+                <div class="color">
+                    <label class="color-option" style="background-color: #F2D230;">
+                        <input type="radio" name="color" value="#F2D230" checked>
+                    </label>
+                    
+
+                    <label class="color-option" style="background-color: #022859;">
+                        <input type="radio" name="color" value="#022859">
+                    </label>
+                    
+
+                    <label class="color-option" style="background-color: #F20505;">
+                        <input type="radio" name="color" value="#F20505">
+                    </label>
+                    
+
+                    <label class="color-option" style="background-color: #0D0D0D;">
+                        <input type="radio" name="color" value="#0D0D0D">
+                    </label>
+                    
+
+                    <label class="color-option" style="background-color: #DEDEDE;">
+                        <input type="radio" name="color" value="#DEDEDE">
+                    </label>
+                    
+                </div>
+            </div>
+
+            <button class="btn" id="btnGenerar" onclick="generarQR()" disabled>Generar</button>
+            <button class="btn" id="btnDescargar" onclick="descargarQR()">Descargar QR</button>
+            <button class="btn" id="btnCrearOtro" onclick="reiniciarFormulario()">Crear Otro</button>
+        </div>
+
+        <div class="preview">
+            <div class="phone-frame">
+                <div class="qr-container">
+                    <canvas id="qrcode"></canvas>
+                    <p>Escanéame</p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
